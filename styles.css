@@ -1,0 +1,121 @@
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  height: 500px;
+  min-height: 500px;
+}
+
+
+
+.given-text {
+  cursor: pointer;
+  color: #1a73e8;  /* Google's link color */
+  text-decoration: underline;
+}
+
+.translation-box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.translation-input,
+.translation-output {
+  flex: 1;
+  height: 400px;
+  padding: 10px;
+  border: 1px solid #dfe1e5;  /* Google's border color */
+  border-radius: 8px;  /* Slightly rounded corners */
+  resize: none;
+  font-size: 16px;  /* Larger font size */
+  line-height: 1.5;  /* More space between lines */
+}
+
+.translate-button, #redirect-button {
+  background-color: #1a73e8;  /* Google's button color */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  border: none;  /* No border on the button */
+  font-size: 16px;  /* Larger font size */
+  margin-top: 20px;  /* Add margin-top for spacing */
+}
+
+.translate-button:hover, #redirect-button:hover {
+  background-color: #0c5fb9;  /* Darker hover color */
+}
+
+.translate-button:disabled {
+  background-color: #d9d9d9;  /* Lighter disabled color */
+  cursor: not-allowed;
+}
+
+.translate-button:disabled:hover::before {
+  content: "Translation in progress and you cannot click it";  /* Text to display on hover */
+  position: absolute;
+  top: 100%;  /* Position the box below the button */
+  left: 50%;  /* Center the box horizontally */
+  transform: translateX(-50%);  /* Adjust horizontal positioning */
+  background-color: #f1f1f1;  /* Background color for the text */
+  color: #333; /* Content color */
+  padding: 4px 8px;  /* Padding for the box */
+  border-radius: 4px;  /* Rounded corners for the box */
+  font-size: 14px;  /* Font size for the text */
+}
+
+#redirect-button:disabled:hover::before {
+  content: "To activate the button, ensure that both text1 and text2 are translated.";  /* Text to display */
+  position: absolute;
+  top: 100%;  /* Position the text below the button */
+  left: 50%;  /* Center the text horizontally */
+  transform: translateX(-50%);  /* Adjust horizontal positioning */
+  background-color: #f1f1f1;  /* Background color for the text */
+  color: #333; /* Content color */
+  padding: 4px 8px;  /* Padding for the text */
+  border-radius: 4px;  /* Rounded corners for the text background */
+  font-size: 14px;  /* Font size for the text */
+  
+}
+
+#redirect-button:disabled {
+  background-color: #d9d9d9;  /* Lighter disabled color */
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 800px) {
+  .translation-box {
+    flex-direction: column;
+  }
+}
+
+input, textarea {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+.given-text {
+  cursor: pointer;
+  color: #007bff;
+  text-decoration: underline;
+  text-align: center;  /* Add this line */
+}
+
+.selected {
+  background-color: blue;
+  color: white;
+}
+
+.translation-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
